@@ -49,3 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=12 \
     telephony.lteOnCdmaDevice=0 \
     telephony.lteOnGsmDevice=1
+
+# Add launcher3 to AICP
+PRODUCT_PACKAGES += \
+    Launcher3
