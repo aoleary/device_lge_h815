@@ -21,9 +21,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit ROM vendor common stuff
 $(call inherit-product, vendor/aosp/config/common.mk)
 
-# Inherit ROM vendor telephony stuff
-$(call inherit-product, vendor/aosp/config/telephony.mk)
-
 # Overlays (inherit after vendor to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
