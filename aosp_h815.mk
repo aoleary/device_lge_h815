@@ -18,12 +18,29 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit AOSCP common bits
+$(call inherit-product, vendor/aosp/config/common.mk)
+
+# Inherit telephony stuff
+$(call inherit-product, vendor/aosp/config/telephony.mk)
+
 # Inherit from h815 device
 $(call inherit-product, device/lge/h815/device.mk)
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := h815
-PRODUCT_NAME := full_h815
+PRODUCT_NAME := aosp_h815
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H815
 PRODUCT_MANUFACTURER := LGE
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_DEVICE="g4" \
+    PRODUCT_NAME="g4_global_com" \
+    PRIVATE_BUILD_DESC="p1_global_com-user 8.0 NRD90U 171931902b165 release-keys"
+
+BUILD_FINGERPRINT := "lge/p1_global_com/p1:8.1.0/OPM4.171019.016.A1/4720815:user/release-keys"
