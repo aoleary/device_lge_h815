@@ -19,10 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit AOSCP common bits
-$(call inherit-product, vendor/aosp/config/common.mk)
-
-# Inherit telephony stuff
-$(call inherit-product, vendor/aosp/config/telephony.mk)
+$(call inherit-product, vendor/potato/config/common_full_phone.mk)
 
 # Inherit from h815 device
 $(call inherit-product, device/lge/h815/device.mk)
@@ -33,7 +30,7 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := h815
-PRODUCT_NAME := aosp_h815
+PRODUCT_NAME := potato_h815
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H815
 PRODUCT_MANUFACTURER := LGE
