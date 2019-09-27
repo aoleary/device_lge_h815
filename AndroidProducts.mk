@@ -16,3 +16,8 @@
 # permissions and limitations under the License.
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/potato_h815.mk
+
+COMMON_LUNCH_CHOICES := \
+    potato_h815-userdebug \
+    potato_h815-eng \
+    potato_h815-user
