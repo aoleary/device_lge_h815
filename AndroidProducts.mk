@@ -15,9 +15,9 @@
 # the License for the specific language governing 
 # permissions and limitations under the License.
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/potato_h815.mk
+    $(LOCAL_DIR)/aosp_h815.mk
 
 COMMON_LUNCH_CHOICES := \
-    potato_h815-userdebug \
-    potato_h815-eng \
-    potato_h815-user
+    aosp_h815-userdebug \
+    aosp_h815-eng \
+    aosp_h815-user
