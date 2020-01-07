@@ -18,14 +18,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit ROM vendor common stuff
-$(call inherit-product, vendor/aosp/config/common.mk)
-
-# Inherit ROM vendor telephony stuff
-$(call inherit-product, vendor/aosp/config/telephony.mk)
-
 # Inherit from h815 device
 $(call inherit-product, device/lge/h815/device.mk)
+
+# Inherit some common AOSiP stuff.
+$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
@@ -33,7 +30,7 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := h815
-PRODUCT_NAME := aosp_h815
+PRODUCT_NAME := aosip_h815
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H815
 PRODUCT_MANUFACTURER := LGE
