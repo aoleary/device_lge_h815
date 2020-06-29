@@ -27,5 +27,11 @@ PRODUCT_PACKAGES += \
     fstab.h815 \
     init.device.rc \
 
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # common g4
 $(call inherit-product, device/lge/g4-common/g4.mk)
