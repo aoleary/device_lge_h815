@@ -18,24 +18,24 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit ROM vendor common stuff
+$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
+
+# Overlays (inherit after vendor to ensure we override it)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 # Inherit from h815 device
 $(call inherit-product, device/lge/h815/device.mk)
 
-# Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1440
-
 # Set those variables here to overwrite the inherited values.
+PRODUCT_NAME := xtended_h815
 PRODUCT_DEVICE := h815
-PRODUCT_NAME := aosip_h815
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H815
 PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_DISPLAY_ID="AOSiP" \
     PRODUCT_DEVICE="g4" \
     PRODUCT_NAME="p1_global_com" \
     PRIVATE_BUILD_DESC="p1_global_com-user 6.0 MRA58K 152940055675e release-keys"
